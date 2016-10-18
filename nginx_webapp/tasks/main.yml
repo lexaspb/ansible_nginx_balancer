@@ -1,0 +1,5 @@
+---
+# - include: add_repo
+ - include: mkdir.yml
+ - include: packages.yml
+ - include: config.yml

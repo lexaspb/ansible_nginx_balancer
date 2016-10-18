@@ -1,0 +1,6 @@
+--- 
+ # Handlers for nginx 
+ 
+ - name: restart services 
+   service: name=nginx state=restarted 
+   service: name=php-fpm state=restarted

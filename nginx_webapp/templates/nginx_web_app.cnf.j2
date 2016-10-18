@@ -1,0 +1,17 @@
+# my cnf
+server {
+   listen 80 default_server;
+   listen [::]:80 default_server ipv6only=on;
+   error_log /var/log/nginx/error.log;
+   root /var/www/example.com/html;
+   index index.php index.html index.htm;
+
+     location ~ \.php$ {
+        try_files $uri $uri/ =404;	
+	fastcgi_pass   127.0.0.1:9000;
+	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+	fastcgi_index  index.php;
+	include fastcgi_params;
+											
+   }
+ }  

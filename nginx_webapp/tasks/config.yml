@@ -1,0 +1,6 @@
+---
+- name: nginx web_app configuration file 
+  template: backup=yes src=nginx_web_app.cnf.j2 dest=/etc/nginx/conf.d/default.conf
+  template: src=webapp_config.cnf.j2 dest=/var/www/example.com/html/index.php owner=nginx group=nginx mode=0750
+  notify: restart php-fpm  
+  notify: restart nginx 

@@ -1,0 +1,4 @@
+---
+- name: create directory
+  file: path= /var/www/example.com/html state= directory recurse= yes owner=nginx group=nginx mode=0750
+              
